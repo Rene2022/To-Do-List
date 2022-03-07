@@ -95,16 +95,12 @@ h1 {
 
 .removeButton {
  font-size: 1.4rem;
- margin: 0 0.75rem;
  font-family: 'Bowlby One SC', cursive;
  background: none;
  outline: none;
  color: red;
  border: none;
 }
-
-
-
 
 
 .radio {
@@ -122,8 +118,6 @@ input[type="radio"]{
     cursor: pointer;
     margin-right: 10px;
 }
-
-
 
 
 .radio__radio::after {
@@ -176,4 +170,5 @@ input[type="radio"]:checked + label:before {
     border: 10px solid white;
     background-color: black;
 }
+
 
