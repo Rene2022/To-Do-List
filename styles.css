@@ -138,15 +138,19 @@ label span:hover{
 
 label span:before{
     content:"";
-    background-color: orangered;
+    background-color: blueviolet;
     width: 42px;
     height: 42px;
     border-radius: 50%;
     margin-right: 10px;
     transition: .25s ease;
-    box-shadow: inset 0 0 0 2px orangered
+    box-shadow: inset 0 0 0 2px blueviolet;
 }
 
 input[type="radio"]:checked + span:before{
-    box-shadow: inset 0 0 0 10px blueviolet;
+    box-shadow: inset 0 0 0 10px orangered;
+}
+
+.pending {
+    color: rgb(255, 49, 83);
 }
