@@ -1,44 +1,47 @@
-//1. create a new input element.
-//2. Add the type text.
-//3. append the element to the DOM.
-// Create a "close" button and append it to each list item.
-
 const container = document.querySelector('.container');
-var inputValue = document.querySelector('.input');
+let inputValue = document.querySelector('.input');
 const add = document.querySelector('.add');
 
 // if(window.localStorage.getItem("todos") == undefined){
-//      var todos = [];
+//      let todos = [];
 //      window.localStorage.setItem("todos", JSON.stringify(todos));
 // }
 
-var todosEX = window.localStorage.getItem("todos");
-var todos = JSON.parse(todosEX);
+let todosEX = window.localStorage.getItem("todos");
+let todos = JSON.parse(todosEX);
 
 // OOP or Object Oriented Programming
-class item{
-	constructor(name){
+class item {
+	constructor(name) {
 		this.createItem(name);
 	}
-    createItem(name){
-    	var itemBox = document.createElement('div');
+    createItem(name) {
+    	let itemBox = document.createElement('div');
         itemBox.classList.add('item');
 
+      // done 
+      let done = document.createElement('done');
+      done.classList.add('done');
+      done.innerHTML = "DONE";
+      done.addEventListener('click',function onClick(event) {
+      this.style.backgroundColor = 'yellow';
+      });
+
       // input/ adding text 
-    	var input = document.createElement('input');
+    	let input = document.createElement('input');
     	input.type = "text";
     	input.disabled = true;
     	input.value = name;
     	input.classList.add('item_input');
       
       // edit text 
-    	var edit = document.createElement('button');
+    	let edit = document.createElement('button');
     	edit.classList.add('edit');
     	edit.innerHTML = "EDIT";
     	edit.addEventListener('click', () => this.edit(input, name));
 
       // remove text 
-    	var remove = document.createElement('button');
+    	let remove = document.createElement('button');
     	remove.classList.add('remove');
     	remove.innerHTML = "REMOVE";
     	remove.addEventListener('click', () => this.remove(itemBox, name));
@@ -46,6 +49,7 @@ class item{
       // obviously appending the input/add, the edit, and the remove functionality
     	container.appendChild(itemBox);
 
+        itemBox.appendChild(done);
         itemBox.appendChild(input);
         itemBox.appendChild(edit);
         itemBox.appendChild(remove);
@@ -54,10 +58,10 @@ class item{
 
     //JSON is JavaScript Object Notation a standard text-based format for representing structured data based on JavaScript object syntax. It is commonly used for transmitting data in web applications (e.g., sending some data from the server to the client, so it can be displayed on a web page, or vice versa).
 
-    edit(input, name){
-        if(input.disabled == true){
+    edit(input, name) {
+        if(input.disabled === true){
            input.disabled = !input.disabled;
-        } else{
+        } else {
             input.disabled = !input.disabled;
             let indexof = todos.indexOf(name);
             todos[indexof] = input.value;
@@ -65,7 +69,7 @@ class item{
         }
     }
 
-    remove(itemBox, name){
+    remove(itemBox, name) {
         itemBox.parentNode.removeChild(itemBox);
         let index = todos.indexOf(name);
         todos.splice(index, 1);
@@ -82,8 +86,8 @@ window.addEventListener('keydown', (e) => {
 	}
 })
 
-function check(){
-	if(inputValue.value != ""){
+function check() {
+	if(inputValue.value != "") {
 		new item(inputValue.value);
         todos.push(inputValue.value);
         window.localStorage.setItem("todos", JSON.stringify(todos));
@@ -92,6 +96,6 @@ function check(){
 }
 
 
-for (var v = 0 ; v < todos.length ; v++){
-    new item(todos[v]);
-}
+// for (var v = 0 ; v < todos.length ; v++){
+//     new item(todos[v]);
+// }
