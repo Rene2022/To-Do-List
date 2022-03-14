@@ -1,182 +1,110 @@
 * {
- padding: 0;
- margin: 0;
- box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
- height: 100%;
- background-color: powderblue;
+  height: 100%;
+  background-color: powderblue;
 }
 
 h1 {
- font-size: 3rem;
- font-weight: 50;
- margin: 1rem 0 3rem;
- text-align: center;
- color: white;
- font-family: 'Bowlby One SC', cursive;
+  font-size: 3rem;
+  font-weight: 50;
+  margin: 1rem 0 3rem;
+  text-align: center;
+  color: white;
+  font-family: "Bowlby One SC", cursive;
 }
 
 .styling {
- font-weight: 800;
- color: red;
+  font-weight: 800;
+  color: red;
 }
 
-.input-div {
- display: flex;
- justify-content: center;
- align-items: center;
- text-align: center;
+.title {
+  color: lime;
+  text-transform: uppercase;
+  font-weight: 800;
 }
 
-.input-div .input {
-    padding: 0.5rem 1rem;
-    height: 50px;
-    outline: none;
-    border: none;
-    background-color: #fff;
-    width: 450px;
-    font-size: 1.15rem;
-    margin: 0.25rem;
-    border-radius: 25px;
-   }
-   
-.addButton {
- height: 50px;
- width: 50px;
- border-radius: 25px;
- outline: none;
- border: none;
- background-color: #fff;
- color: #fff;
- margin: 0.25rem;
- background-color: lime;
- cursor: pointer;
+.inputDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.addButton:hover {
- opacity: 0.7;
+.input {
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: none;
+  height: 50px;
+  border-radius: 25px;
+  width: 350px;
+  margin: 0.25rem;
+  transition: 0.5s;
+  font-size: 1.15rem;
+}
+
+.add {
+  height: 50px;
+  width: 50px;
+  border-radius: 25px;
+  outline: solid 15px;
+  border: none;
+  background-color: #fff;
+  color: red;
+  margin: 2rem;
+  background-color: white;
+  cursor: pointer;
+}
+
+.add:hover {
+  opacity: 0.7;
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    margin-top: 2rem;
-   }
-   
-   .item {
-    padding: 0.5rem;
-    margin-bottom: 1.5rem;
-    border-bottom: 4px solid #fff;
-   }
-
-.item-input {
- background: none;
- outline: none;
- color: #fff;
- border: none;
- width: 350px;
- font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 2rem;
 }
 
-.editButton {
- font-size: 1.4rem;
- margin: 0 0.75rem;
- font-family: 'Bowlby One SC', cursive;
- background: none;
- outline: none;
- color: balck;
- border: none;
+.item {
+  padding: 0.5rem;
+  border-bottom: 4px solid #fff;
+  margin-bottom: 1.5rem;
 }
 
-.removeButton {
- font-size: 1.4rem;
- font-family: 'Bowlby One SC', cursive;
- background: none;
- outline: none;
- color: red;
- border: none;
+.item_input {
+  background: none;
+  outline: none;
+  border: none;
+  color: #fff;
+  font-size: 1.4rem;
+  width: 245px;
 }
 
-
-
-.radio{
-    display: flex;
-    font-family: 'Bowlby One SC', cursive;
-    color: green;
-    font-size: 1.4rem;
-}
-.item{
-    display: flex;
-
-}
-input[type="radio"]{
-    display: none;
+.edit {
+  background: none;
+  outline: none;
+  border: none;
+  color: rgb(235, 117, 8);
+  font-size: 1.4rem;
+  font-family: "Hind", sans-serif;
+  margin: 0 0.5rem;
+  cursor: pointer;
 }
 
-label{
-    display: flex;
-    cursor: pointer;
-    font-weight: 500;
-    margin-bottom: 10px;
-}
-
-
-label span{
-    display: flex;
-    align-items: center;
-    padding: 10px 20px 10px 10px;
-    border-radius: 31px;
-    transition: .25s ease;
-}
-  
-  .radio__radio::after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    display: block;
-    background: #009879;
-    border-radius: 50%;
-    transform: scale(0);
-    transition: transform 0.15s;
-}
-
-.radio_input:checked + .radio__radio::after {
-    transform: scale(1);
-}
-
-
-label {
-    position: relative;
-    color: green;
-    font-family: 'Bowlby One SC', cursive;
-    font-size: 18px;
-    border: 2px solid black;
-    border: 5px;
-    padding: 10px 50px;
-
-label span:hover{
-    background-color: purple;
-}
-
-label span:before{
-    content:"";
-    background-color: blueviolet;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    margin-right: 10px;
-    transition: .25s ease;
-    box-shadow: inset 0 0 0 2px blueviolet;
-}
-
-input[type="radio"]:checked + span:before{
-    box-shadow: inset 0 0 0 10px orangered;
-}
-
-.pending {
-    color: rgb(255, 49, 83);
+.remove {
+  background: none;
+  outline: none;
+  border: none;
+  color: black;
+  font-size: 1.4rem;
+  font-family: "Hind", sans-serif;
+  cursor: pointer;
 }
