@@ -19,6 +19,14 @@ class item {
     	let itemBox = document.createElement('div');
         itemBox.classList.add('item');
 
+      // done 
+      let done = document.createElement('done');
+      done.classList.add('done');
+      done.innerHTML = "DONE";
+      done.addEventListener('click',function onClick(event) {
+      this.style.backgroundColor = 'yellow';
+      });
+
       // input/ adding text 
     	let input = document.createElement('input');
     	input.type = "text";
@@ -41,6 +49,7 @@ class item {
       // obviously appending the input/add, the edit, and the remove functionality
     	container.appendChild(itemBox);
 
+        itemBox.appendChild(done);
         itemBox.appendChild(input);
         itemBox.appendChild(edit);
         itemBox.appendChild(remove);
